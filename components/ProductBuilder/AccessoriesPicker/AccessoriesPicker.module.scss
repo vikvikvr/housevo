@@ -1,0 +1,11 @@
+@import "~styles/mixins";
+
+.container {
+  @include debug;
+}
+
+.accessoryItem {
+  @include debug;
+  @include column;
+  gap: 1rem;
+}
