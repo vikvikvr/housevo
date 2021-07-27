@@ -13,15 +13,21 @@ function ColorPicker({
   onSelectColor,
 }: Props): JSX.Element {
   return (
-    <div>
-      <h1>color picker</h1>
-      <ul>
+    <div className={styles.container}>
+      <img
+        className={styles.carImage}
+        src={colors[selectedColorIndex].imageUrl}
+        alt="car color preview"
+      />
+      <ul className={styles.colorsRow}>
         {colors.map((color, index) => (
-          <li key={color.name} onClick={() => onSelectColor(index)}>
-            selected {selectedColorIndex === index ? "true " : "false "}
-            {color.name}
-            {color.price}
-          </li>
+          <li
+            className={styles.colorCircle}
+            data-selected={selectedColorIndex === index}
+            style={{ backgroundColor: color.hexCode }}
+            key={color.name}
+            onClick={() => onSelectColor(index)}
+          ></li>
         ))}
       </ul>
     </div>

@@ -1,0 +1,23 @@
+@import "~styles/mixins";
+
+.container {
+  @include column;
+}
+
+.carImage {
+  width: 100%;
+}
+
+.colorsRow {
+  @include row;
+  gap: 1rem;
+}
+
+.colorCircle {
+  @include circle(2rem);
+  @include debug;
+
+  &[data-selected="true"] {
+    border: 3px solid black;
+  }
+}
