@@ -1,4 +1,5 @@
 import styles from "./ModelPicker.module.scss";
+import Image from "next/image";
 import { CarModel } from "types";
 
 interface Props {
@@ -13,14 +14,17 @@ function ModelPicker({
   onSelectModel,
 }: Props): JSX.Element {
   return (
-    <div>
-      <h1>model picker</h1>
+    <div className={styles.container}>
       <ul>
         {availableModels.map((model, index) => (
-          <li key={model.name}>
-            <div>{model.name}</div>
-            <div>image {model.imageUrl}</div>
-            <div>from {model.basePrice}</div>
+          <li className={styles.modelContainer} key={model.name}>
+            <h1>{model.name}</h1>
+            <img
+              className={styles.modelImage}
+              src={model.imageUrl}
+              alt="model image"
+            />
+            <div>from ${model.basePrice}</div>
             <input
               type="radio"
               name="model"
