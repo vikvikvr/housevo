@@ -33,10 +33,10 @@ function Summary({ car }: Props): JSX.Element {
       <section>
         <h3 className={styles.sectionTitle}>accessories</h3>
         <ul className={styles.accessories}>
-          {/* TODO: change message when no accessories selected */}
           {car.accessories.map((accessory) => (
             <li key={accessory.name}>• {accessory.name}</li>
           ))}
+          {car.accessories.length === 0 && <li>• No accessories selected</li>}
         </ul>
       </section>
     </main>
