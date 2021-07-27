@@ -4,7 +4,7 @@ import { CarModel } from "types";
 interface Props {
   selectedModel: CarModel;
   availableModels: CarModel[];
-  onSelectModel(modelName: string): void;
+  onSelectModel(modelIndex: number);
 }
 
 function ModelPicker({
@@ -16,7 +16,7 @@ function ModelPicker({
     <div>
       <h1>model picker</h1>
       <ul>
-        {availableModels.map((model) => (
+        {availableModels.map((model, index) => (
           <li key={model.name}>
             <div>{model.name}</div>
             <div>image {model.imageUrl}</div>
@@ -26,7 +26,7 @@ function ModelPicker({
               name="model"
               value={selectedModel.name}
               checked={selectedModel.name === model.name}
-              onChange={() => onSelectModel(model.name)}
+              onChange={() => onSelectModel(index)}
             />
           </li>
         ))}
