@@ -4,8 +4,10 @@ import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
 import ColorPicker from "./ColorPicker";
 import AccessoriesPicker from "./AccessoriesPicker";
+import Summary from "./Summary";
 import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
+import { Car } from "types";
 
 function ProductBuilder() {
   const [wizardStep, setWizardStep] = useState(0);
@@ -16,6 +18,14 @@ function ProductBuilder() {
     } else {
       setWizardStep((step) => step + 1);
     }
+  }
+
+  function getDesiredCarData(): Car {
+    return {
+      model: carsOptions[0].model,
+      accessories: [],
+      color: carsOptions[0].colors[0],
+    };
   }
 
   return (
@@ -50,6 +60,7 @@ function ProductBuilder() {
           toggleAccessory={alert}
         />
       )}
+      {wizardStep === 3 && <Summary car={getDesiredCarData()} />}
     </div>
   );
 }
