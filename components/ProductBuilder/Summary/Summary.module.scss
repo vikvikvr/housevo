@@ -1,0 +1,23 @@
+@import "~styles/mixins";
+
+.container {
+  @include column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.sectionTitle {
+  text-transform: uppercase;
+}
+
+.carPicture {
+  width: 100%;
+}
+
+.colorRow {
+  @include row;
+}
+
+.colorCircle {
+  @include circle(2rem);
+}

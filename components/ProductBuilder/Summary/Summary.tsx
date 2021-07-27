@@ -7,25 +7,39 @@ interface Props {
 
 function Summary({ car }: Props): JSX.Element {
   return (
-    <div>
-      <h1>summary</h1>
-      <h3>model</h3>
-      <div>image {car.color.imageUrl}</div>
-      <h3>{car.model.name}</h3>
-      <div>{car.model.description}</div>
-      <h3>color</h3>
-      <div>
-        <div>{car.color.hexCode}</div>
-        <div>{car.color.name}</div>
-        <div>{car.color.price}</div>
-      </div>
-      <h3>accessories</h3>
-      <ul>
-        {car.accessories.map((accessory) => (
-          <li key={accessory.name}>{accessory.name}</li>
-        ))}
-      </ul>
-    </div>
+    <main className={styles.container}>
+      <section>
+        <h3 className={styles.sectionTitle}>model</h3>
+        <img
+          className={styles.carPicture}
+          src={car.color.imageUrl}
+          alt="car image"
+        />
+        <h1 className={styles.modelName}>{car.model.name}</h1>
+        <p className={styles.modelDescription}>{car.model.description}</p>
+      </section>
+      <section>
+        <h3 className={styles.sectionTitle}>color</h3>
+        <div className={styles.colorRow}>
+          <div
+            className={styles.colorCircle}
+            style={{ backgroundColor: car.color.hexCode }}
+          ></div>
+          <span className={styles.colorDescription}>
+            {car.color.name} - ${car.color.price}
+          </span>
+        </div>
+      </section>
+      <section>
+        <h3 className={styles.sectionTitle}>accessories</h3>
+        <ul className={styles.accessories}>
+          {/* TODO: change message when no accessories selected */}
+          {car.accessories.map((accessory) => (
+            <li key={accessory.name}>• {accessory.name}</li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }
 
