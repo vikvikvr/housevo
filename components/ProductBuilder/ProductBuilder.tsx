@@ -3,6 +3,7 @@ import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
 import ColorPicker from "./ColorPicker";
+import AccessoriesPicker from "./AccessoriesPicker";
 import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
 
@@ -40,6 +41,13 @@ function ProductBuilder() {
           colors={carsOptions[0].colors}
           selectedColorIndex={0}
           onSelectColor={alert}
+        />
+      )}
+      {wizardStep === 2 && (
+        <AccessoriesPicker
+          accessories={carsOptions[0].accessories}
+          selectedAccessories={[0]}
+          toggleAccessory={alert}
         />
       )}
     </div>
