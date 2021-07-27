@@ -10,7 +10,7 @@ const headerTitles = ["select model", "select color", "accessories", "summary"];
 function WizardHeader({ step, selectStep }: Props): JSX.Element {
   return (
     <div className={styles.container}>
-      <h2>{headerTitles[step]}</h2>
+      <h2 className={styles.title}>{headerTitles[step]}</h2>
       <div className={styles.stepCounter}>Step {step + 1} of 4</div>
       <ul className={styles.links}>
         <li onClick={() => selectStep(0)}>models</li>
