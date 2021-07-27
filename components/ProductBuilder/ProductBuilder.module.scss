@@ -1,0 +1,7 @@
+@import "~styles/mixins";
+
+.container {
+  @include fill;
+  @include column;
+  align-items: stretch;
+}

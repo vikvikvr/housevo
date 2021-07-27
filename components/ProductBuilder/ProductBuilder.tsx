@@ -51,16 +51,8 @@ function ProductBuilder() {
   }
 
   return (
-    <div>
-      <div>page: {wizardStep}</div>
+    <div className={styles.container}>
       <WizardHeader step={wizardStep} selectStep={setWizardStep} />
-      <WizardFooter
-        step={wizardStep}
-        onNext={handleNextStep}
-        onBack={() => setWizardStep((step) => step - 1)}
-        imageUrl="some image path"
-        totalPrice={12345}
-      />
       {wizardStep === 0 && (
         <ModelPicker
           availableModels={carsOptions.map((option) => option.model)}
@@ -83,6 +75,13 @@ function ProductBuilder() {
         />
       )}
       {wizardStep === 3 && <Summary car={getDesiredCarData()} />}
+      <WizardFooter
+        step={wizardStep}
+        onNext={handleNextStep}
+        onBack={() => setWizardStep((step) => step - 1)}
+        imageUrl="some image path"
+        totalPrice={12345}
+      />
     </div>
   );
 }
