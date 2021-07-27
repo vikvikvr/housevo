@@ -1,0 +1,20 @@
+@import "~styles/mixins";
+
+.container {
+  @include debug;
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+  align-items: center;
+}
+
+.links {
+  display: none;
+}
+
+.backButton {
+  grid-column: span 2;
+}
+
+.stepCounter {
+  justify-self: end;
+}
