@@ -7,9 +7,9 @@ interface Props {
 
 function Summary({ car }: Props): JSX.Element {
   return (
-    <main className={styles.container}>
-      <section>
-        <h3 className={styles.sectionTitle}>model</h3>
+    <ul className={styles.container}>
+      <li>
+        <h2 className={styles.sectionTitle}>model</h2>
         <img
           className={styles.carPicture}
           src={car.color.imageUrl}
@@ -17,9 +17,9 @@ function Summary({ car }: Props): JSX.Element {
         />
         <h1 className={styles.modelName}>{car.model.name}</h1>
         <p className={styles.modelDescription}>{car.model.description}</p>
-      </section>
-      <section>
-        <h3 className={styles.sectionTitle}>color</h3>
+      </li>
+      <li>
+        <h2 className={styles.sectionTitle}>color</h2>
         <div className={styles.colorRow}>
           <div
             className={styles.colorCircle}
@@ -29,17 +29,17 @@ function Summary({ car }: Props): JSX.Element {
             {car.color.name} - ${car.color.price}
           </span>
         </div>
-      </section>
-      <section>
-        <h3 className={styles.sectionTitle}>accessories</h3>
+      </li>
+      <li>
+        <h2 className={styles.sectionTitle}>accessories</h2>
         <ul className={styles.accessories}>
           {car.accessories.map((accessory) => (
             <li key={accessory.name}>• {accessory.name}</li>
           ))}
           {car.accessories.length === 0 && <li>• No accessories selected</li>}
         </ul>
-      </section>
-    </main>
+      </li>
+    </ul>
   );
 }
 

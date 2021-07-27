@@ -8,6 +8,16 @@
 
 .sectionTitle {
   text-transform: uppercase;
+  margin-bottom: 2rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .carPicture {
@@ -16,8 +26,13 @@
 
 .colorRow {
   @include row;
+  gap: 1rem;
 }
 
 .colorCircle {
   @include circle(2rem);
+}
+
+.colorDescription {
+  text-transform: capitalize;
 }
