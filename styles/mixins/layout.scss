@@ -1,0 +1,54 @@
+// flexbox-related
+
+@mixin row {
+  display: flex;
+  align-items: center;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin center {
+  @include row;
+  justify-content: center;
+}
+
+// grid-related
+
+@mixin grid-center {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin columns($count) {
+  display: grid;
+  grid-template-columns: repeat($count, 1fr);
+}
+
+@mixin center-in-cell {
+  align-self: center;
+  justify-self: center;
+}
+
+// others
+
+@mixin fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@mixin screen-center {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin debug($color: red) {
+  border: 1px solid $color;
+}
