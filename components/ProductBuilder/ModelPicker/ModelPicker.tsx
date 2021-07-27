@@ -17,7 +17,11 @@ function ModelPicker({
     <div className={styles.container}>
       <ul>
         {availableModels.map((model, index) => (
-          <li className={styles.modelContainer} key={model.name}>
+          <li
+            className={styles.modelContainer}
+            onClick={() => onSelectModel(index)}
+            key={model.name}
+          >
             <h1>{model.name}</h1>
             <img
               className={styles.modelImage}
@@ -30,7 +34,7 @@ function ModelPicker({
               name="model"
               value={selectedModel.name}
               checked={selectedModel.name === model.name}
-              onChange={() => onSelectModel(index)}
+              readOnly
             />
           </li>
         ))}
