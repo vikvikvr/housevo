@@ -17,6 +17,7 @@ export interface CarModel {
   name: string;
   description: string;
   basePrice: number;
+  imageUrl: string;
 }
 
 export interface CarColor {

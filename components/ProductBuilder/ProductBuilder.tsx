@@ -1,6 +1,8 @@
 import { useState } from "react";
 import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
+import ModelPicker from "./ModelPicker";
+import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
 
 function ProductBuilder() {
@@ -25,6 +27,13 @@ function ProductBuilder() {
         imageUrl="some image path"
         totalPrice={12345}
       />
+      {wizardStep === 0 && (
+        <ModelPicker
+          availableModels={carsOptions.map((option) => option.model)}
+          selectedModel={carsOptions[0].model}
+          onSelectModel={alert}
+        />
+      )}
     </div>
   );
 }
