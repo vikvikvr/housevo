@@ -2,6 +2,7 @@ import { useState } from "react";
 import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
+import ColorPicker from "./ColorPicker";
 import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
 
@@ -32,6 +33,13 @@ function ProductBuilder() {
           availableModels={carsOptions.map((option) => option.model)}
           selectedModel={carsOptions[0].model}
           onSelectModel={alert}
+        />
+      )}
+      {wizardStep === 1 && (
+        <ColorPicker
+          colors={carsOptions[0].colors}
+          selectedColorIndex={0}
+          onSelectColor={alert}
         />
       )}
     </div>
