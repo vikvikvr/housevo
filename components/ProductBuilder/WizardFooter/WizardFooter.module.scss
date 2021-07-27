@@ -1,0 +1,14 @@
+@import "~styles/mixins";
+
+.container {
+  @include row;
+  margin-top: auto;
+
+  button {
+    width: 100%;
+  }
+}
+
+.carInfo {
+  display: none;
+}
