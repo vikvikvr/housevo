@@ -1,11 +1,24 @@
 @import "~styles/mixins";
+@import "~styles/colors";
 
 .container {
-  @include debug;
+  display: grid;
+  gap: 1.5rem;
 }
 
 .accessoryItem {
-  @include debug;
   @include column;
+  @include rounded;
   gap: 1rem;
+  padding: 2rem 1.5rem;
+  font-weight: 700;
+  border: 2px solid $lightGray;
+}
+
+.price {
+  color: $textLight;
+}
+
+.checkbox {
+  @include square(30px);
 }
