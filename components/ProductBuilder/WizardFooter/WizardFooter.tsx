@@ -17,14 +17,20 @@ function WizardFooter({
 }: Props): JSX.Element {
   const buttonTexts = ["colors", "accessories", "summary", "buy now"];
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.carInfo}>
         <div>some image {imageUrl}</div>
         <div>total: {totalPrice}</div>
       </div>
-      {step > 0 && <button onClick={onBack}>{buttonTexts[step - 1]}</button>}
-      <button onClick={onNext}>{buttonTexts[step]}</button>
-    </div>
+      {step > 0 && (
+        <button className={styles.backButton} onClick={onBack}>
+          {buttonTexts[step - 1]}
+        </button>
+      )}
+      <button className={styles.forwardButton} onClick={onNext}>
+        {buttonTexts[step]}
+      </button>
+    </footer>
   );
 }
 
