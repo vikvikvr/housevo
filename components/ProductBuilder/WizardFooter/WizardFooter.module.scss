@@ -12,6 +12,9 @@
 
   button {
     @include fill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -20,11 +23,22 @@
 .backButton {
   background-color: white;
   color: $textLight;
+
+  .buttonIcon {
+    position: absolute;
+    left: 1rem;
+    transform: rotate(180deg);
+  }
 }
 
 .forwardButton {
   background-color: $primary;
   color: white;
+
+  .buttonIcon {
+    position: absolute;
+    right: 1rem;
+  }
 }
 
 .carInfo {

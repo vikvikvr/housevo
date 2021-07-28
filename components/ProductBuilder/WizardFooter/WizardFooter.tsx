@@ -1,4 +1,6 @@
 import styles from "./WizardFooter.module.scss";
+import { arrowDarkIcon, arrowLightIcon } from "assets/images/";
+import Image from "next/image";
 
 interface Props {
   imageUrl: string;
@@ -24,11 +26,17 @@ function WizardFooter({
       </div>
       {step > 0 && (
         <button className={styles.backButton} onClick={onBack}>
-          {buttonTexts[step - 1]}
+          <span className={styles.buttonIcon}>
+            <Image src={arrowDarkIcon} alt="arrow icon" />
+          </span>
+          <span>{buttonTexts[step - 1]}</span>
         </button>
       )}
       <button className={styles.forwardButton} onClick={onNext}>
-        {buttonTexts[step]}
+        <span>{buttonTexts[step]}</span>
+        <span className={styles.buttonIcon}>
+          <Image src={arrowLightIcon} alt="arrow icon" />
+        </span>
       </button>
     </footer>
   );
