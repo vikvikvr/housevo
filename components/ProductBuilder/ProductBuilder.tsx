@@ -50,6 +50,19 @@ function ProductBuilder() {
     };
   }
 
+  function carTotalPrice(car: Car): number {
+    let totalPrice = car.model.basePrice;
+    totalPrice += car.color.price;
+    totalPrice += car.accessories.reduce(
+      (total, accessory) => total + accessory.price,
+      0,
+    );
+
+    return totalPrice;
+  }
+
+  const desiredCar = getDesiredCarData();
+
   return (
     <div className={styles.container}>
       <WizardHeader step={wizardStep} selectStep={setWizardStep} />
@@ -74,13 +87,13 @@ function ProductBuilder() {
           toggleAccessory={toggleAccessory}
         />
       )}
-      {wizardStep === 3 && <Summary car={getDesiredCarData()} />}
+      {wizardStep === 3 && <Summary car={desiredCar} />}
       <WizardFooter
         step={wizardStep}
         onNext={handleNextStep}
         onBack={() => setWizardStep((step) => step - 1)}
-        imageUrl="some image path"
-        totalPrice={12345}
+        imageUrl={desiredCar.model.imageUrl}
+        totalPrice={carTotalPrice(desiredCar)}
       />
     </div>
   );
