@@ -2,5 +2,7 @@
 
 .container {
   @include screen;
+  overflow: scroll;
   display: grid;
+  padding: 0 1rem;
 }
