@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
@@ -8,6 +8,7 @@ import Summary from "./Summary";
 import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
 import { Car } from "types";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function ProductBuilder() {
   // TODO: extract to custom hook
@@ -62,32 +63,42 @@ function ProductBuilder() {
   }
 
   const desiredCar = getDesiredCarData();
+  const transitionProps = {
+    timeout: 500,
+    classNames: "transition",
+    unmountOnExit: true,
+  };
 
   return (
     <div className={styles.container}>
       <WizardHeader step={wizardStep} selectStep={setWizardStep} />
-      {wizardStep === 0 && (
+      <CSSTransition in={wizardStep === 0} {...transitionProps}>
         <ModelPicker
+          key="model-picker"
           availableModels={carsOptions.map((option) => option.model)}
           selectedModel={carsOptions[carModel].model}
           onSelectModel={setCarModel}
         />
-      )}
-      {wizardStep === 1 && (
+      </CSSTransition>
+      <CSSTransition in={wizardStep === 1} {...transitionProps}>
         <ColorPicker
+          key="color-picker"
           colors={carsOptions[carModel].colors}
           selectedColorIndex={carColor}
           onSelectColor={setCarColor}
         />
-      )}
-      {wizardStep === 2 && (
+      </CSSTransition>
+      <CSSTransition in={wizardStep === 2} {...transitionProps}>
         <AccessoriesPicker
+          key="accessories-picker"
           accessories={carsOptions[carModel].accessories}
           selectedAccessories={carAccessories}
           toggleAccessory={toggleAccessory}
         />
-      )}
-      {wizardStep === 3 && <Summary car={desiredCar} />}
+      </CSSTransition>
+      <CSSTransition in={wizardStep === 3} {...transitionProps}>
+        <Summary car={desiredCar} />
+      </CSSTransition>
       <WizardFooter
         step={wizardStep}
         onNext={handleNextStep}
