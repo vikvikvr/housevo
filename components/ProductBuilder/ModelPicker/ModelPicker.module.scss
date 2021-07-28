@@ -1,13 +1,27 @@
 @import "~styles/mixins";
+@import "~styles/colors";
 
 .container {
-  @include debug;
+  display: grid;
+  gap: 1.5rem;
 }
 
 .modelContainer {
   @include column;
+  @include rounded;
+  padding: 3rem 1.5rem;
+  gap: 1rem;
+  border: 2px solid $lightGray;
 }
 
 .modelImage {
   width: 100%;
+}
+
+.price {
+  color: $textLight;
+}
+
+.radioInput {
+  @include circle(2rem);
 }
