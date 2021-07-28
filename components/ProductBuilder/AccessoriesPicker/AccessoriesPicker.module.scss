@@ -26,6 +26,7 @@
 .checkbox {
   @include square(30px);
   @include rounded;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.44, 1.39);
   border: 2px solid $lightGray;
 
   &[data-checked="true"] {
