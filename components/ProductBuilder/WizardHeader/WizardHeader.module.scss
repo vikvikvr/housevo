@@ -8,9 +8,13 @@
   gap: 1rem;
 }
 
-.title {
+.titleMobile {
   text-transform: capitalize;
   font-weight: 400;
+}
+
+.titleDesktop {
+  display: none;
 }
 
 .links {
@@ -24,6 +28,11 @@
   background-color: $textLight;
   color: white;
   position: relative;
+  display: none;
+
+  &[data-step="0"] {
+    display: block;
+  }
 
   .iconContainer {
     transform: rotate(180deg);
@@ -35,4 +44,62 @@
 .stepCounter {
   justify-self: end;
   color: $textLight;
+}
+
+@include desktop {
+  .container {
+    @include column;
+    position: relative;
+  }
+
+  .titleMobile {
+    display: none;
+  }
+
+  .titleDesktop {
+    display: block;
+    content: "asd";
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .backButton {
+    display: block;
+    padding-left: 2rem;
+    border: 2px solid $textLight;
+    background-color: white;
+    color: $textLight;
+    position: absolute;
+    left: 0;
+  }
+
+  .stepCounter {
+    display: none;
+  }
+
+  .links {
+    @include row;
+    text-transform: uppercase;
+    gap: 1rem;
+    color: $textLight;
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    li {
+      cursor: pointer;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &[data-selected="true"] {
+        color: $primary;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
 }
