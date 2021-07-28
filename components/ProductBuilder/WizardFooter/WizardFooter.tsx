@@ -17,7 +17,7 @@ function WizardFooter({
   onBack,
   onNext,
 }: Props): JSX.Element {
-  const buttonTexts = ["colors", "accessories", "summary", "buy now"];
+  const buttonTexts = ["model", "colors", "accessories", "summary", "buy now"];
   return (
     <footer className={styles.container}>
       <div className={styles.carInfo}>
@@ -33,7 +33,7 @@ function WizardFooter({
         </button>
       )}
       <button className={styles.forwardButton} onClick={onNext}>
-        <span>{buttonTexts[step]}</span>
+        <span>{buttonTexts[step + 1]}</span>
         <span className={styles.buttonIcon}>
           <Image src={arrowLightIcon} alt="arrow icon" />
         </span>
