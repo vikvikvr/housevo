@@ -4,6 +4,7 @@
 .container {
   display: grid;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .modelContainer {
@@ -12,6 +13,7 @@
   padding: 3rem 1.5rem;
   gap: 1rem;
   border: 2px solid $lightGray;
+  max-width: 420px;
 
   .iconContainer {
     display: none;
@@ -42,5 +44,16 @@
     transform: scale(1.4);
     background-color: $primary;
     border: none;
+  }
+}
+
+@include desktop {
+  .container {
+    @include debug;
+    @include center;
+    @include row;
+    place-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
   }
 }
