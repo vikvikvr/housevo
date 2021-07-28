@@ -13,6 +13,10 @@
   padding: 2rem 1.5rem;
   font-weight: 700;
   border: 2px solid $lightGray;
+
+  &[data-checked="true"] {
+    border: 2px solid $primary;
+  }
 }
 
 .price {
@@ -21,4 +25,12 @@
 
 .checkbox {
   @include square(30px);
+  @include rounded;
+  border: 2px solid $lightGray;
+
+  &[data-checked="true"] {
+    transform: scale(1.4);
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
 }
