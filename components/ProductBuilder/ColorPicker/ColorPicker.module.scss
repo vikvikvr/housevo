@@ -1,4 +1,5 @@
 @import "~styles/mixins";
+@import "~styles/colors";
 
 .container {
   @include column;
@@ -11,14 +12,20 @@
 
 .colorsRow {
   @include row;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .colorCircle {
   @include circle(2rem);
-  @include debug;
+  border: 2px solid $lightGray;
+
+  .innerCircle {
+    @include circle(1.8rem);
+    border: 2px solid white;
+    position: absolute;
+  }
 
   &[data-selected="true"] {
-    border: 3px solid black;
+    border: 2px solid $primary;
   }
 }

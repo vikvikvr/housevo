@@ -24,10 +24,14 @@ function ColorPicker({
           <li
             className={styles.colorCircle}
             data-selected={selectedColorIndex === index}
-            style={{ backgroundColor: color.hexCode }}
             key={color.name}
             onClick={() => onSelectColor(index)}
-          ></li>
+          >
+            <div
+              className={styles.innerCircle}
+              style={{ backgroundColor: color.hexCode }}
+            ></div>
+          </li>
         ))}
       </ul>
     </div>
