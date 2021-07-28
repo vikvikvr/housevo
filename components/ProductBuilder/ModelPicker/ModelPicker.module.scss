@@ -10,10 +10,12 @@
 .modelContainer {
   @include column;
   @include rounded;
+  cursor: pointer;
   padding: 3rem 1.5rem;
   gap: 1rem;
   border: 2px solid $lightGray;
   max-width: 420px;
+  transition: all 0.3s ease-out;
 
   .iconContainer {
     display: none;
@@ -39,17 +41,17 @@
 .radioButton {
   @include circle(2rem);
   border: 2px solid $lightGray;
+  transition: all 0.3s ease-out;
 
   &[data-checked="true"] {
     transform: scale(1.4);
     background-color: $primary;
-    border: none;
+    border: 2px solid transparent;
   }
 }
 
 @include desktop {
   .container {
-    @include debug;
     @include center;
     @include row;
     place-items: center;
