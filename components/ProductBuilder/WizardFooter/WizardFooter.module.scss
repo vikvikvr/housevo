@@ -9,9 +9,17 @@
   width: 100%;
   height: 3.5rem;
   box-shadow: 0px -2px 25px 6px #b1b1b18a;
+  background-color: white;
+
+  nav {
+    @include row;
+    @include fill;
+    margin-left: auto;
+  }
 
   button {
     @include fill;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,4 +52,62 @@
 
 .carInfo {
   display: none;
+}
+
+@include desktop {
+  .container {
+    height: 100px;
+    padding: 0 2rem;
+
+    nav {
+      width: auto;
+      height: auto;
+    }
+
+    button {
+      @include rounded-full;
+      height: 3.5rem;
+      width: 11rem;
+      position: relative;
+
+      .buttonText {
+        position: absolute;
+        left: 2rem;
+      }
+    }
+
+    .backButton {
+      @include circle(3.5rem);
+      background-color: $lightGray;
+      // margin-left: auto;
+      margin-right: 1rem;
+
+      .buttonText {
+        display: none;
+      }
+    }
+  }
+
+  .carInfo {
+    @include row;
+
+    img {
+      padding-right: 2rem;
+      height: 80px;
+      border-right: 1px solid $lightGray;
+    }
+  }
+
+  .totalPrice {
+    margin-left: 2rem;
+
+    span {
+      color: $textLight;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
 }

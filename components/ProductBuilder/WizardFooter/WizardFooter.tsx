@@ -21,23 +21,29 @@ function WizardFooter({
   return (
     <footer className={styles.container}>
       <div className={styles.carInfo}>
-        <div>some image {imageUrl}</div>
-        <div>total: {totalPrice}</div>
+        {/* TODO: replace with <Image /> */}
+        <img src={imageUrl} alt="car image" />
+        <div className={styles.totalPrice}>
+          <span>Total</span>
+          <h2>${totalPrice}</h2>
+        </div>
       </div>
-      {step > 0 && (
-        <button className={styles.backButton} onClick={onBack}>
+      <nav>
+        {step > 0 && (
+          <button className={styles.backButton} onClick={onBack}>
+            <span className={styles.buttonIcon}>
+              <Image src={arrowDarkIcon} alt="arrow icon" />
+            </span>
+            <span className={styles.buttonText}>{buttonTexts[step - 1]}</span>
+          </button>
+        )}
+        <button className={styles.forwardButton} onClick={onNext}>
+          <span className={styles.buttonText}>{buttonTexts[step + 1]}</span>
           <span className={styles.buttonIcon}>
-            <Image src={arrowDarkIcon} alt="arrow icon" />
+            <Image src={arrowLightIcon} alt="arrow icon" />
           </span>
-          <span>{buttonTexts[step - 1]}</span>
         </button>
-      )}
-      <button className={styles.forwardButton} onClick={onNext}>
-        <span>{buttonTexts[step + 1]}</span>
-        <span className={styles.buttonIcon}>
-          <Image src={arrowLightIcon} alt="arrow icon" />
-        </span>
-      </button>
+      </nav>
     </footer>
   );
 }
