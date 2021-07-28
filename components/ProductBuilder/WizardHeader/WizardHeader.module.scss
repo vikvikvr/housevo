@@ -10,6 +10,7 @@
 
 .title {
   text-transform: capitalize;
+  font-weight: 400;
 }
 
 .links {
@@ -19,9 +20,16 @@
 .backButton {
   @include rounded;
   grid-column: span 2;
-  padding: 0.6rem;
+  padding: 0.7rem;
   background-color: $textLight;
   color: white;
+  position: relative;
+
+  .iconContainer {
+    transform: rotate(180deg);
+    position: absolute;
+    left: 1rem;
+  }
 }
 
 .stepCounter {
