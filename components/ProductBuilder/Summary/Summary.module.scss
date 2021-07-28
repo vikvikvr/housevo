@@ -27,6 +27,7 @@
 .carPicture {
   width: 100%;
   margin-bottom: 2rem;
+  max-width: 750px;
 }
 
 .modelDescription {
@@ -49,4 +50,40 @@
 
 .accessories {
   color: $textLight;
+}
+
+@include desktop {
+  .container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    gap: 2rem;
+
+    & > li {
+      @include column;
+    }
+  }
+
+  .modelName {
+    font-size: 2.5rem;
+  }
+
+  .modelDescription {
+    padding: 0 4rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+  }
+
+  .colorCircle {
+    @include circle(3rem);
+  }
+
+  .colorDescription {
+    font-size: 1.5rem;
+  }
+
+  .accessories {
+    font-size: 1.2rem;
+  }
 }
