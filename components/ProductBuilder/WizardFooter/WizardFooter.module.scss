@@ -40,16 +40,6 @@
   }
 }
 
-.forwardButton {
-  background-color: $primary;
-  color: white;
-
-  .buttonIcon {
-    position: absolute;
-    right: 1rem;
-  }
-}
-
 .carInfo {
   display: none;
 }
@@ -79,7 +69,6 @@
     .backButton {
       @include circle(3.5rem);
       background-color: $lightGray;
-      // margin-left: auto;
       margin-right: 1rem;
 
       .buttonText {

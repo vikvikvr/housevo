@@ -1,6 +1,7 @@
 import styles from "./WizardFooter.module.scss";
 import { arrowDarkIcon, arrowLightIcon } from "assets/images/";
 import Image from "next/image";
+import ScrollUpButton from "components/ScrollUpButton";
 
 interface Props {
   imageUrl: string;
@@ -17,7 +18,7 @@ function WizardFooter({
   onBack,
   onNext,
 }: Props): JSX.Element {
-  const buttonTexts = ["model", "colors", "accessories", "summary", "buy now"];
+  const buttonTexts = ["models", "colors", "accessories", "summary", "buy now"];
   return (
     <footer className={styles.container}>
       <div className={styles.carInfo}>
@@ -37,12 +38,11 @@ function WizardFooter({
             <span className={styles.buttonText}>{buttonTexts[step - 1]}</span>
           </button>
         )}
-        <button className={styles.forwardButton} onClick={onNext}>
-          <span className={styles.buttonText}>{buttonTexts[step + 1]}</span>
-          <span className={styles.buttonIcon}>
-            <Image src={arrowLightIcon} alt="arrow icon" />
-          </span>
-        </button>
+        <ScrollUpButton
+          textOptions={buttonTexts}
+          currentIndex={step + 1}
+          onClick={onNext}
+        />
       </nav>
     </footer>
   );
