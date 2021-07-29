@@ -4,6 +4,7 @@
 .container {
   display: grid;
   gap: 1.5rem;
+  padding-bottom: 5rem;
 }
 
 .accessoryItem {
@@ -22,6 +23,7 @@
 
 .name {
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .price {

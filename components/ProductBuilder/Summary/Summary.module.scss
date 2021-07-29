@@ -5,6 +5,7 @@
   @include column;
   align-items: stretch;
   max-width: 1000px;
+  padding-bottom: 4rem;
 
   & > li {
     margin-bottom: 2rem;
@@ -34,6 +35,7 @@
 .modelDescription {
   color: $textLight;
   line-height: 1.6rem;
+  margin-top: 0.7rem;
 }
 
 .colorRow {
@@ -51,7 +53,7 @@
 
 @include desktop {
   .container {
-    margin-top: 4rem;
+    margin-top: 12rem;
     margin-bottom: 4rem;
     gap: 2rem;
 
