@@ -2,6 +2,7 @@ import styles from "./AccessoriesPicker.module.scss";
 import { CarAccessory } from "types";
 import { checkIcon } from "assets/images";
 import Image from "next/image";
+import { numberWithPeriods } from "helpers";
 
 interface Props {
   selectedAccessories: number[];
@@ -15,7 +16,7 @@ function AccessoriesPicker({
   toggleAccessory,
 }: Props): JSX.Element {
   return (
-    <ul className={styles.container}>
+    <ul className={styles.container} data-testid="AccessoriesPicker__container">
       {accessories.map((accessory, index) => {
         const isChecked = selectedAccessories.includes(index);
         return (
@@ -26,7 +27,9 @@ function AccessoriesPicker({
             key={accessory.name}
           >
             <p className={styles.name}>{accessory.name}</p>
-            <span className={styles.price}>${accessory.price}</span>
+            <span className={styles.price}>
+              ${numberWithPeriods(accessory.price)}
+            </span>
             {/* TODO: extract checkbox to seaprate component */}
             <div className={styles.checkbox} data-checked={isChecked}>
               <span className={styles.checkIcon}>

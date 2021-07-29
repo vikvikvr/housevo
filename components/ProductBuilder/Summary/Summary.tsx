@@ -1,5 +1,6 @@
 import styles from "./Summary.module.scss";
 import { Car } from "types";
+import { numberWithPeriods } from "helpers";
 
 interface Props {
   car: Car;
@@ -7,7 +8,7 @@ interface Props {
 
 function Summary({ car }: Props): JSX.Element {
   return (
-    <ul className={styles.container}>
+    <ul className={styles.container} data-testid="Summary__container">
       <li>
         <h2 className={styles.sectionTitle}>model</h2>
         <img
@@ -26,7 +27,7 @@ function Summary({ car }: Props): JSX.Element {
             style={{ backgroundColor: car.color.hexCode }}
           ></div>
           <span className={styles.colorDescription}>
-            {car.color.name} - ${car.color.price}
+            {car.color.name} - ${numberWithPeriods(car.color.price)}
           </span>
         </div>
       </li>
