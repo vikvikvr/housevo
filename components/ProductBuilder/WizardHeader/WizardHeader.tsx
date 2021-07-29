@@ -15,7 +15,7 @@ function WizardHeader({ step, selectStep }: Props): JSX.Element {
       <h1 className={styles.titleMobile}>{headerTitles[step]}</h1>
       <h1 className={styles.titleDesktop}>product builder</h1>
       <span className={styles.stepCounter}>Step {step + 1} of 4</span>
-      <ul className={styles.links}>
+      <ul className={styles.links} data-testid="WizardHeader__links__container">
         <li data-selected={step === 0} onClick={() => selectStep(0)}>
           models
         </li>
