@@ -72,33 +72,35 @@ function ProductBuilder() {
   return (
     <div className={styles.container}>
       <WizardHeader step={wizardStep} selectStep={setWizardStep} />
-      <CSSTransition in={wizardStep === 0} {...transitionProps}>
-        <ModelPicker
-          key="model-picker"
-          availableModels={carsOptions.map((option) => option.model)}
-          selectedModel={carsOptions[carModel].model}
-          onSelectModel={setCarModel}
-        />
-      </CSSTransition>
-      <CSSTransition in={wizardStep === 1} {...transitionProps}>
-        <ColorPicker
-          key="color-picker"
-          colors={carsOptions[carModel].colors}
-          selectedColorIndex={carColor}
-          onSelectColor={setCarColor}
-        />
-      </CSSTransition>
-      <CSSTransition in={wizardStep === 2} {...transitionProps}>
-        <AccessoriesPicker
-          key="accessories-picker"
-          accessories={carsOptions[carModel].accessories}
-          selectedAccessories={carAccessories}
-          toggleAccessory={toggleAccessory}
-        />
-      </CSSTransition>
-      <CSSTransition in={wizardStep === 3} {...transitionProps}>
-        <Summary car={desiredCar} />
-      </CSSTransition>
+      <div className={styles.pageContent}>
+        <CSSTransition in={wizardStep === 0} {...transitionProps}>
+          <ModelPicker
+            key="model-picker"
+            availableModels={carsOptions.map((option) => option.model)}
+            selectedModel={carsOptions[carModel].model}
+            onSelectModel={setCarModel}
+          />
+        </CSSTransition>
+        <CSSTransition in={wizardStep === 1} {...transitionProps}>
+          <ColorPicker
+            key="color-picker"
+            colors={carsOptions[carModel].colors}
+            selectedColorIndex={carColor}
+            onSelectColor={setCarColor}
+          />
+        </CSSTransition>
+        <CSSTransition in={wizardStep === 2} {...transitionProps}>
+          <AccessoriesPicker
+            key="accessories-picker"
+            accessories={carsOptions[carModel].accessories}
+            selectedAccessories={carAccessories}
+            toggleAccessory={toggleAccessory}
+          />
+        </CSSTransition>
+        <CSSTransition in={wizardStep === 3} {...transitionProps}>
+          <Summary car={desiredCar} />
+        </CSSTransition>
+      </div>
       <WizardFooter
         step={wizardStep}
         onNext={handleNextStep}
