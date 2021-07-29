@@ -1,0 +1,26 @@
+@import "~styles/mixins";
+@import "~styles/colors";
+
+.container {
+  @include circle(3rem);
+  background-color: $lightGray;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+
+  &[data-selected="true"] {
+    background-color: $primary;
+  }
+}
+
+.whiteCircle {
+  @include circle(2.8rem);
+  @include center-absolute;
+  background-color: white;
+}
+
+.coloredCircle {
+  @include circle(2.6rem);
+  @include center-absolute;
+  background-color: green;
+}
