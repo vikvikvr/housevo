@@ -23,7 +23,7 @@ describe("navigation [Desktop]", () => {
     it("should navigate forward using forward button", () => {
       buttonTexts.slice(1).forEach((text) => {
         // click footer's forward button
-        getTestElement("WizardFooter__container").contains(text).click();
+        cy.get('[data-variant="primary"]').click();
       });
     });
 
@@ -43,7 +43,7 @@ describe("navigation [Desktop]", () => {
         .reverse()
         .forEach((text) => {
           getTestElement("WizardFooter__container").contains(text);
-          getTestElement("WizardFooter__button__back").click();
+          getTestElement("WizardFooter__backButton__small").click();
           getTestElement("WizardFooter__container").not().contains(text);
         });
     });

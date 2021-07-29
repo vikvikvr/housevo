@@ -58,7 +58,7 @@ describe("pages [Desktop]", () => {
           for (let i = 0; i < $children.length; i++) {
             getTestElement("ColorPicker__container")
               .children("ul")
-              .children("li")
+              .children()
               .eq(i)
               .click();
 
@@ -66,7 +66,7 @@ describe("pages [Desktop]", () => {
             for (let j = 0; j < $children.length; j++) {
               getTestElement("ColorPicker__container")
                 .children("ul")
-                .children("li")
+                .children()
                 .eq(j)
                 .invoke("attr", "data-selected")
                 .should("equal", String(i == j));
