@@ -4,21 +4,14 @@ interface Props {
   hexCode: string;
   onClick?(): void;
   isSelected?: boolean;
-  small?: boolean;
 }
 
-function ColorBubble({
-  hexCode,
-  small,
-  isSelected,
-  onClick,
-}: Props): JSX.Element {
+function ColorBubble({ hexCode, isSelected, onClick }: Props): JSX.Element {
   return (
     <div
       className={styles.container}
       data-selected={isSelected}
       data-clickable={Boolean(onClick)}
-      data-small={small}
       onClick={onClick}
     >
       <div className={styles.whiteCircle}>
