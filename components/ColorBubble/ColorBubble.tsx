@@ -2,11 +2,17 @@ import styles from "./ColorBubble.module.scss";
 
 interface Props {
   hexCode: string;
+  tooltipText?: string;
   onClick?(): void;
   isSelected?: boolean;
 }
 
-function ColorBubble({ hexCode, isSelected, onClick }: Props): JSX.Element {
+function ColorBubble({
+  hexCode,
+  isSelected,
+  onClick,
+  tooltipText,
+}: Props): JSX.Element {
   return (
     <div
       className={styles.container}
@@ -14,6 +20,7 @@ function ColorBubble({ hexCode, isSelected, onClick }: Props): JSX.Element {
       data-clickable={Boolean(onClick)}
       onClick={onClick}
     >
+      {tooltipText && <div className={styles.tooltip}>{tooltipText}</div>}
       <div className={styles.whiteCircle}>
         <div
           className={styles.coloredCircle}

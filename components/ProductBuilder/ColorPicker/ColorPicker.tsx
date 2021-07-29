@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ColorBubble } from "components";
+import { numberWithPeriods } from "helpers";
 import { CarColor } from "types";
 import styles from "./ColorPicker.module.scss";
 
@@ -24,6 +25,7 @@ function ColorPicker({
       <ul className={styles.colorsRow}>
         {colors.map((color, index) => (
           <ColorBubble
+            tooltipText={`${color.name} - $${numberWithPeriods(color.price)}`}
             isSelected={selectedColorIndex === index}
             hexCode={color.hexCode}
             key={color.name}

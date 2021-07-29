@@ -16,6 +16,23 @@
   }
 }
 
+.tooltip {
+  position: absolute;
+  display: none;
+}
+
+.container:hover .tooltip {
+  @include rounded-full;
+  display: block;
+  background-color: $lightGray;
+  text-transform: capitalize;
+  bottom: 4rem;
+  min-width: max-content;
+  padding: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .whiteCircle {
   @include circle(2.8rem);
   @include center-absolute;
