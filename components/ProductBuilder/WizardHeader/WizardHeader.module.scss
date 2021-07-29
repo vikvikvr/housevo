@@ -2,6 +2,8 @@
 @import "~styles/colors";
 
 .container {
+  background-color: white;
+  width: 100%;
   display: grid;
   grid: 1fr / 1fr 1fr;
   align-items: center;
@@ -49,7 +51,9 @@
 @include desktop {
   .container {
     @include column;
-    position: relative;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
   }
 
   .titleMobile {
@@ -71,7 +75,7 @@
     background-color: white;
     color: $textLight;
     position: absolute;
-    left: 0;
+    left: 2rem;
   }
 
   .stepCounter {

@@ -4,6 +4,7 @@
 .container {
   @include column;
   align-items: stretch;
+  max-width: 1000px;
 
   & > li {
     margin-bottom: 2rem;
