@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./ModelPicker.module.scss";
 import Image from "next/image";
 import { CarModel } from "types";

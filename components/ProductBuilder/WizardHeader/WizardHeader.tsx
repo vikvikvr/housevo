@@ -1,5 +1,5 @@
 import styles from "./WizardHeader.module.scss";
-import { arrowLightIcon } from "assets/images";
+import { arrowLightIcon, arrowDarkIcon } from "assets/images";
 import Image from "next/image";
 
 interface Props {
@@ -31,8 +31,11 @@ function WizardHeader({ step, selectStep }: Props): JSX.Element {
       </ul>
       <button className={styles.backButton} data-step={step}>
         {/* TODO: show icon for desktop */}
-        <span className={styles.iconContainer}>
+        <span className={styles.iconContainerLight}>
           <Image src={arrowLightIcon} alt="arrow icon" />
+        </span>
+        <span className={styles.iconContainerDark}>
+          <Image src={arrowDarkIcon} alt="arrow icon" />
         </span>
         <span>Article & Download</span>
       </button>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ColorBubble } from "components";
 import { CarColor } from "types";
 import styles from "./ColorPicker.module.scss";

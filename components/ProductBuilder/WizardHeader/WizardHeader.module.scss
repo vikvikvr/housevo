@@ -8,6 +8,8 @@
   grid: 1fr / 1fr 1fr;
   align-items: center;
   gap: 1rem;
+  z-index: 2;
+  padding: 2rem 0 1rem 0;
 }
 
 .titleMobile {
@@ -25,6 +27,7 @@
 
 .backButton {
   @include rounded;
+  cursor: pointer;
   grid-column: span 2;
   padding: 0.7rem;
   background-color: $textLight;
@@ -36,10 +39,24 @@
     display: block;
   }
 
-  .iconContainer {
-    transform: rotate(180deg);
+  &:hover {
+    background-color: $textLight;
+    color: white;
+  }
+
+  .iconContainerLight {
+    transform: rotate(180deg) translateY(50%);
     position: absolute;
     left: 1rem;
+    top: 50%;
+  }
+
+  .iconContainerDark {
+    display: none;
+    transform: rotate(180deg) translateY(50%);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
   }
 }
 
@@ -51,7 +68,7 @@
 @include desktop {
   .container {
     @include column;
-    padding: 2rem;
+    padding: 2.5rem;
     position: fixed;
     top: 0;
   }
@@ -63,7 +80,7 @@
   .titleDesktop {
     display: block;
     content: "asd";
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     text-transform: capitalize;
   }
@@ -75,7 +92,17 @@
     background-color: white;
     color: $textLight;
     position: absolute;
-    left: 2rem;
+    left: 1rem;
+
+    &:hover {
+      .iconContainerDark {
+        display: none;
+      }
+    }
+
+    .iconContainerDark {
+      display: block;
+    }
   }
 
   .stepCounter {
