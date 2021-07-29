@@ -1,20 +1,26 @@
 import styles from "./ScrollUpButton.module.scss";
 import Image from "next/image";
-import { arrowLightIcon } from "assets/images";
+import { arrowLightIcon, arrowDarkIcon } from "assets/images";
 
 interface Props {
   textOptions: string[];
   currentIndex: number;
+  variant: "primary" | "secondary";
   onClick();
 }
 
 function ScrollUpButton({
   textOptions,
   currentIndex,
+  variant,
   onClick,
 }: Props): JSX.Element {
   return (
-    <button className={styles.scrollUpButton} onClick={onClick}>
+    <button
+      className={styles.scrollUpButton}
+      onClick={onClick}
+      data-variant={variant}
+    >
       <span
         className={styles.textContainer}
         style={{
@@ -25,6 +31,7 @@ function ScrollUpButton({
         {textOptions.map((text, index) => {
           return (
             <div
+              className={styles.text}
               key={text}
               data-visible={currentIndex === index}
               data-text={text}
@@ -35,7 +42,10 @@ function ScrollUpButton({
         })}
       </span>
       <span className={styles.buttonIcon}>
-        <Image src={arrowLightIcon} alt="arrow icon" />
+        <Image
+          src={variant === "primary" ? arrowLightIcon : arrowDarkIcon}
+          alt="arrow icon"
+        />
       </span>
     </button>
   );

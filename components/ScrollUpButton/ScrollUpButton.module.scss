@@ -5,24 +5,42 @@
   background-color: $primary;
   color: white;
   position: relative;
+  width: 100%;
+
+  &:hover {
+    background-color: $primaryHover;
+  }
 
   .buttonIcon {
-    @include debug;
     position: absolute;
     right: 1rem;
   }
 
-  .textContainer {
-    @include column;
-    gap: 1rem;
-  }
-  div {
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    height: 1rem;
+  &[data-variant="secondary"] {
+    background-color: white;
+    color: $textLight;
 
-    &[data-visible="true"] {
-      opacity: 1;
+    .buttonIcon {
+      position: absolute;
+      right: auto;
+      left: 1rem;
+      top: 50%;
+      transform: rotate(180deg) translateY(50%);
     }
+  }
+}
+
+.textContainer {
+  @include column;
+  gap: 1rem;
+}
+
+.text {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  height: 1rem;
+
+  &[data-visible="true"] {
+    opacity: 1;
   }
 }
