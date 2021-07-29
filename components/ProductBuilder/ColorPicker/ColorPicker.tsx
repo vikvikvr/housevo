@@ -1,3 +1,4 @@
+import { ColorBubble } from "components";
 import { CarColor } from "types";
 import styles from "./ColorPicker.module.scss";
 
@@ -21,17 +22,12 @@ function ColorPicker({
       />
       <ul className={styles.colorsRow}>
         {colors.map((color, index) => (
-          <li
-            className={styles.colorCircle}
-            data-selected={selectedColorIndex === index}
+          <ColorBubble
+            isSelected={selectedColorIndex === index}
+            hexCode={color.hexCode}
             key={color.name}
             onClick={() => onSelectColor(index)}
-          >
-            <div
-              className={styles.innerCircle}
-              style={{ backgroundColor: color.hexCode }}
-            ></div>
-          </li>
+          />
         ))}
       </ul>
     </div>

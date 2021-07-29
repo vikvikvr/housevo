@@ -52,3 +52,10 @@
 @mixin debug($color: red) {
   border: 1px solid $color;
 }
+
+@mixin center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

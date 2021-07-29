@@ -1,6 +1,7 @@
 import styles from "./Summary.module.scss";
 import { Car } from "types";
 import { numberWithPeriods } from "helpers";
+import ColorBubble from "components/ColorBubble";
 
 interface Props {
   car: Car;
@@ -22,10 +23,7 @@ function Summary({ car }: Props): JSX.Element {
       <li>
         <h2 className={styles.sectionTitle}>color</h2>
         <div className={styles.colorRow}>
-          <div
-            className={styles.colorCircle}
-            style={{ backgroundColor: car.color.hexCode }}
-          ></div>
+          <ColorBubble hexCode={car.color.hexCode} />
           <span className={styles.colorDescription}>
             {car.color.name} - ${numberWithPeriods(car.color.price)}
           </span>

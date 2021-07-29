@@ -2,8 +2,8 @@ import styles from "./ColorBubble.module.scss";
 
 interface Props {
   hexCode: string;
-  isSelected: boolean;
-  onClick(): void;
+  onClick?(): void;
+  isSelected?: boolean;
   small?: boolean;
 }
 
@@ -17,6 +17,7 @@ function ColorBubble({
     <div
       className={styles.container}
       data-selected={isSelected}
+      data-clickable={Boolean(onClick)}
       data-small={small}
       onClick={onClick}
     >

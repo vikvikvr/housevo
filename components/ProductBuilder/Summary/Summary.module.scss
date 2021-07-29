@@ -41,10 +41,6 @@
   gap: 1rem;
 }
 
-.colorCircle {
-  @include circle(2rem);
-}
-
 .colorDescription {
   text-transform: capitalize;
 }
@@ -74,10 +70,6 @@
     font-size: 1.2rem;
     line-height: 2rem;
     margin-top: 1rem;
-  }
-
-  .colorCircle {
-    @include circle(3rem);
   }
 
   .colorDescription {

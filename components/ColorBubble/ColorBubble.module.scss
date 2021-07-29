@@ -5,8 +5,11 @@
   @include circle(3rem);
   background-color: $lightGray;
   position: relative;
-  cursor: pointer;
   transition: background-color 0.3s ease-out;
+
+  &[data-clickable="true"] {
+    cursor: pointer;
+  }
 
   &[data-selected="true"] {
     background-color: $primary;
