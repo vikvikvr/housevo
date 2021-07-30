@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
@@ -7,62 +6,24 @@ import AccessoriesPicker from "./AccessoriesPicker";
 import Summary from "./Summary";
 import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
-import { Car } from "types";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
+import useProductBuilder from "hooks/useProductBuilder";
+import { carTotalPrice } from "helpers";
 
 function ProductBuilder() {
-  // TODO: extract to custom hook
-  const [wizardStep, setWizardStep] = useState(0);
-  const [carModel, setCarModel] = useState(0);
-  const [carColor, setCarColor] = useState(0);
-  const [carAccessories, setCarAccessories] = useState<number[]>([]);
+  const {
+    desiredCar,
+    setCarColor,
+    setCarModel,
+    wizardStep,
+    setWizardStep,
+    carModel,
+    carColor,
+    carAccessories,
+    toggleAccessory,
+    handleNextStep,
+  } = useProductBuilder(carsOptions);
 
-  function toggleAccessory(index: number) {
-    if (carAccessories.includes(index)) {
-      setCarAccessories((accessories) => {
-        return accessories.filter((acc) => acc !== index);
-      });
-    } else {
-      setCarAccessories((accessories) => {
-        return [...accessories, index];
-      });
-    }
-  }
-
-  function handleNextStep() {
-    if (wizardStep === 3) {
-      alert("BUY!");
-    } else {
-      setWizardStep((step) => step + 1);
-    }
-  }
-
-  function getDesiredCarData(): Car {
-    const selectedAccessories = carsOptions[carModel].accessories.filter(
-      (_, index) => {
-        return carAccessories.includes(index);
-      },
-    );
-
-    return {
-      model: carsOptions[carModel].model,
-      accessories: selectedAccessories,
-      color: carsOptions[carModel].colors[carColor],
-    };
-  }
-
-  function carTotalPrice(car: Car): number {
-    let totalPrice = car.model.basePrice;
-    totalPrice += car.color.price;
-    totalPrice += car.accessories.reduce(
-      (total, accessory) => total + accessory.price,
-      0,
-    );
-
-    return totalPrice;
-  }
-
-  const desiredCar = getDesiredCarData();
   const transitionProps = {
     timeout: 500,
     classNames: "transition",
@@ -77,7 +38,7 @@ function ProductBuilder() {
           <ModelPicker
             key="model-picker"
             availableModels={carsOptions.map((option) => option.model)}
-            selectedModel={carsOptions[carModel].model}
+            selectedModel={desiredCar.model}
             onSelectModel={setCarModel}
           />
         </CSSTransition>
