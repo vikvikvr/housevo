@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./Summary.module.scss";
 import { Car } from "types";
 import { numberWithPeriods } from "helpers";
 import ColorBubble from "components/ColorBubble";
+
+import styles from "./Summary.module.scss";
 
 interface Props {
   car: Car;

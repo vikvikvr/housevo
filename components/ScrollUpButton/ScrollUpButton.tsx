@@ -1,6 +1,7 @@
-import styles from "./ScrollUpButton.module.scss";
 import Image from "next/image";
 import { arrowLightIcon, arrowDarkIcon } from "assets/images";
+
+import styles from "./ScrollUpButton.module.scss";
 
 interface Props {
   currentIndex: number;

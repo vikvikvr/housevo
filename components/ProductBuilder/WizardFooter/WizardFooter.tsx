@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./WizardFooter.module.scss";
-import { arrowDarkIcon } from "assets/images/";
 import Image from "next/image";
-import ScrollUpButton from "components/ScrollUpButton";
-import { numberWithPeriods } from "helpers";
 import { pageNames } from "data";
+import { ScrollUpButton } from "components";
+import { numberWithPeriods } from "helpers";
+import { arrowDarkIcon } from "assets/images";
+
+import styles from "./WizardFooter.module.scss";
 
 interface Props {
   imageUrl: string;

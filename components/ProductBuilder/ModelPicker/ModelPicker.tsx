@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./ModelPicker.module.scss";
 import Image from "next/image";
 import { CarModel } from "types";
 import { checkIcon } from "assets/images";
 import { numberWithPeriods } from "helpers";
+
+import styles from "./ModelPicker.module.scss";
 
 interface Props {
   availableModels: CarModel[];

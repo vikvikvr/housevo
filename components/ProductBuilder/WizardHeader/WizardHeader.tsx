@@ -1,7 +1,8 @@
-import styles from "./WizardHeader.module.scss";
-import { arrowLightIcon, arrowDarkIcon } from "assets/images";
 import Image from "next/image";
 import { pageNames } from "data";
+import { arrowLightIcon, arrowDarkIcon } from "assets/images";
+
+import styles from "./WizardHeader.module.scss";
 
 interface Props {
   step: number;

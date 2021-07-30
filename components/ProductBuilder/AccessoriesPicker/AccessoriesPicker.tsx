@@ -1,8 +1,9 @@
-import styles from "./AccessoriesPicker.module.scss";
-import { CarAccessory } from "types";
-import { checkIcon } from "assets/images";
 import Image from "next/image";
+import { CarAccessory } from "types";
 import { numberWithPeriods } from "helpers";
+import { checkIcon } from "assets/images";
+
+import styles from "./AccessoriesPicker.module.scss";
 
 interface Props {
   accessories: CarAccessory[];

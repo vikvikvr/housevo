@@ -1,14 +1,15 @@
+import { carsOptions } from "data";
+import { carTotalPrice } from "helpers";
+import { useProductBuilder } from "hooks";
+import { CSSTransition } from "react-transition-group";
+
+import Summary from "./Summary";
 import WizardHeader from "./WizardHeader";
 import WizardFooter from "./WizardFooter";
 import ModelPicker from "./ModelPicker";
 import ColorPicker from "./ColorPicker";
 import AccessoriesPicker from "./AccessoriesPicker";
-import Summary from "./Summary";
-import { carsOptions } from "data";
 import styles from "./ProductBuilder.module.scss";
-import { CSSTransition } from "react-transition-group";
-import useProductBuilder from "hooks/useProductBuilder";
-import { carTotalPrice } from "helpers";
 
 function ProductBuilder(): JSX.Element {
   const {

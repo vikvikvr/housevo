@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import { ProductBuilder } from "components";
-import styles from "../styles/Home.module.scss";
+
+import styles from "styles/Home.module.scss";
 
 function Home(): JSX.Element {
   return (

@@ -2,6 +2,7 @@
 import { ColorBubble } from "components";
 import { numberWithPeriods } from "helpers";
 import { CarColor } from "types";
+
 import styles from "./ColorPicker.module.scss";
 
 interface Props {
