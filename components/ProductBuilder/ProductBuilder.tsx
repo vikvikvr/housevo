@@ -11,6 +11,8 @@ import ColorPicker from "./ColorPicker";
 import AccessoriesPicker from "./AccessoriesPicker";
 import styles from "./ProductBuilder.module.scss";
 
+// **** Allows to customize a car before buying it ****
+
 function ProductBuilder(): JSX.Element {
   const {
     form,

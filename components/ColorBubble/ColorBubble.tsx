@@ -7,6 +7,8 @@ interface Props {
   onClick?(): void;
 }
 
+// **** Interactive circle to select your car's color ****
+
 function ColorBubble({
   hexCode,
   isSelected,

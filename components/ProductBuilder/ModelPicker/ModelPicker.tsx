@@ -12,6 +12,8 @@ interface Props {
   onSelectModel(modelIndex: number): void;
 }
 
+// **** Allows to select only 1 model at a time ****
+
 function ModelPicker({
   selectedModel,
   availableModels,

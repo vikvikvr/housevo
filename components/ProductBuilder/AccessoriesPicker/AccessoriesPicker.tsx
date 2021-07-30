@@ -11,6 +11,8 @@ interface Props {
   toggleAccessory(index: number): void;
 }
 
+// **** Allows to toggle different car accessories ****
+
 function AccessoriesPicker({
   selectedAccessories,
   accessories,

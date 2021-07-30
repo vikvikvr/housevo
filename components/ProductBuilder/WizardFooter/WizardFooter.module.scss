@@ -1,6 +1,8 @@
 @import "~styles/mixins";
 @import "~styles/colors";
 
+// **** Mobile ****
+
 .container {
   @include row;
   position: fixed;
@@ -38,6 +40,8 @@
 .carInfo {
   display: none;
 }
+
+// **** Dekstop ****
 
 @include desktop {
   .container {

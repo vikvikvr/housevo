@@ -1,6 +1,8 @@
 @import "~styles/mixins";
 @import "~styles/colors";
 
+// **** Mobile ****
+
 .container {
   background-color: white;
   width: 100%;
@@ -64,6 +66,8 @@
   justify-self: end;
   color: $textLight;
 }
+
+// **** Dekstop ****
 
 @include desktop {
   .container {

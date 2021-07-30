@@ -1,6 +1,8 @@
 @import "~styles/mixins";
 @import "~styles/colors";
 
+// **** Mobile ****
+
 .container {
   display: grid;
   gap: 1.5rem;
@@ -42,6 +44,8 @@
     border: 2px solid $primary;
   }
 }
+
+// **** Desktop ****
 
 @include desktop {
   .container {

@@ -9,6 +9,8 @@ interface Props {
   car: Car;
 }
 
+// **** Shows a summary of selected car features ****
+
 function Summary({ car }: Props): JSX.Element {
   return (
     <ul className={styles.container} data-testid="Summary__container">

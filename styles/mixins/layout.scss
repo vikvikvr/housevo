@@ -1,4 +1,4 @@
-// flexbox-related
+// **** Flexbox ****
 
 @mixin row {
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-// grid-related
+// **** Grid ****
 
 @mixin grid-center {
   display: grid;
@@ -34,7 +34,7 @@
   justify-self: center;
 }
 
-// others
+// **** Others ****
 
 @mixin fixed {
   position: fixed;

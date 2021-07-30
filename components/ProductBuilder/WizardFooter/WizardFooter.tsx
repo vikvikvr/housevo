@@ -17,6 +17,8 @@ interface Props {
 
 const buttonTexts = [...pageNames, "buy now"];
 
+// **** Bottom navigation ****
+
 function WizardFooter({
   imageUrl,
   totalPrice,

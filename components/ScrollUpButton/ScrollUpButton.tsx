@@ -10,6 +10,8 @@ interface Props {
   onClick(): void;
 }
 
+// **** Text changes with sroll based on index ****
+
 function ScrollUpButton({
   textOptions,
   currentIndex,

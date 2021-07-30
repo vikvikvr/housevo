@@ -11,6 +11,8 @@ interface Props {
   onSelectColor(colorIndex: number): void;
 }
 
+// **** Allows to select only 1 color at a time ****
+
 function ColorPicker({
   selectedColorIndex,
   colors,

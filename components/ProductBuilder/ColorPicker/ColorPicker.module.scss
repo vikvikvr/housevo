@@ -1,6 +1,8 @@
 @import "~styles/mixins";
 @import "~styles/colors";
 
+// **** Mobile ****
+
 .container {
   @include column;
   margin-bottom: 4rem;
@@ -16,6 +18,8 @@
   @include row;
   gap: 0.5rem;
 }
+
+// **** Desktop ****
 
 @include desktop {
   .container {

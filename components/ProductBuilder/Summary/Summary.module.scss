@@ -1,6 +1,8 @@
 @import "~styles/mixins";
 @import "~styles/colors";
 
+// **** Mobile ****
+
 .container {
   @include column;
   align-items: stretch;
@@ -51,6 +53,8 @@
 .accessories {
   color: $textLight;
 }
+
+// **** Desktop ****
 
 @include desktop {
   .container {

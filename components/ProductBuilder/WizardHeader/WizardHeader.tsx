@@ -11,6 +11,8 @@ interface Props {
 
 const headerTitles = ["select model", "select color", "accessories", "summary"];
 
+// **** Top navigation ****
+
 function WizardHeader({ step, selectStep }: Props): JSX.Element {
   return (
     <div className={styles.container}>
