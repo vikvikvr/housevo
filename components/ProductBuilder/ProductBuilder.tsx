@@ -12,14 +12,11 @@ import { carTotalPrice } from "helpers";
 
 function ProductBuilder() {
   const {
+    form,
+    setForm,
     desiredCar,
-    setCarColor,
-    setCarModel,
     wizardStep,
     setWizardStep,
-    carModel,
-    carColor,
-    carAccessories,
     toggleAccessory,
     handleNextStep,
   } = useProductBuilder(carsOptions);
@@ -39,22 +36,22 @@ function ProductBuilder() {
             key="model-picker"
             availableModels={carsOptions.map((option) => option.model)}
             selectedModel={desiredCar.model}
-            onSelectModel={setCarModel}
+            onSelectModel={(model) => setForm((form) => ({ ...form, model }))}
           />
         </CSSTransition>
         <CSSTransition in={wizardStep === 1} {...transitionProps}>
           <ColorPicker
             key="color-picker"
-            colors={carsOptions[carModel].colors}
-            selectedColorIndex={carColor}
-            onSelectColor={setCarColor}
+            colors={carsOptions[form.model].colors}
+            selectedColorIndex={form.color}
+            onSelectColor={(color) => setForm((form) => ({ ...form, color }))}
           />
         </CSSTransition>
         <CSSTransition in={wizardStep === 2} {...transitionProps}>
           <AccessoriesPicker
             key="accessories-picker"
-            accessories={carsOptions[carModel].accessories}
-            selectedAccessories={carAccessories}
+            accessories={carsOptions[form.model].accessories}
+            selectedAccessories={form.accessories}
             toggleAccessory={toggleAccessory}
           />
         </CSSTransition>

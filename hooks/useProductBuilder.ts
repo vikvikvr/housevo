@@ -3,20 +3,25 @@ import { Car, CarOptions } from "types";
 
 function useProductBuilder(carsOptions: CarOptions[]) {
   const [wizardStep, setWizardStep] = useState(0);
-  const [carModel, setCarModel] = useState(0);
-  const [carColor, setCarColor] = useState(0);
-  const [carAccessories, setCarAccessories] = useState<number[]>([]);
+  const [form, setForm] = useState({
+    model: 0,
+    color: 0,
+    accessories: [],
+  });
 
   function toggleAccessory(index: number) {
-    if (carAccessories.includes(index)) {
-      setCarAccessories((accessories) => {
-        return accessories.filter((acc) => acc !== index);
-      });
-    } else {
-      setCarAccessories((accessories) => {
-        return [...accessories, index];
-      });
-    }
+    setForm((currentForm) => {
+      let accessories = [...form.accessories, index];
+
+      if (form.accessories.includes(index)) {
+        accessories = form.accessories.filter((acc) => acc !== index);
+      }
+
+      return {
+        ...currentForm,
+        accessories,
+      };
+    });
   }
 
   function handleNextStep() {
@@ -28,16 +33,14 @@ function useProductBuilder(carsOptions: CarOptions[]) {
   }
 
   function getDesiredCarData(): Car {
-    const selectedAccessories = carsOptions[carModel].accessories.filter(
-      (_, index) => {
-        return carAccessories.includes(index);
-      },
+    const selectedAccessories = carsOptions[form.model].accessories.filter(
+      (_, index) => form.accessories.includes(index),
     );
 
     return {
-      model: carsOptions[carModel].model,
+      model: carsOptions[form.model].model,
       accessories: selectedAccessories,
-      color: carsOptions[carModel].colors[carColor],
+      color: carsOptions[form.model].colors[form.color],
     };
   }
 
@@ -45,13 +48,10 @@ function useProductBuilder(carsOptions: CarOptions[]) {
 
   return {
     desiredCar,
-    setCarModel,
-    setCarColor,
+    form,
+    setForm,
     wizardStep,
     setWizardStep,
-    carModel,
-    carColor,
-    carAccessories,
     toggleAccessory,
     handleNextStep,
   };
