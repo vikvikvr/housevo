@@ -54,7 +54,7 @@ describe("pages [Desktop]", () => {
         .children("ul")
         .children()
         .then(($children) => {
-          // click each color
+          // click on each color
           for (let i = 0; i < $children.length; i++) {
             getTestElement("ColorPicker__container")
               .children("ul")
@@ -62,7 +62,7 @@ describe("pages [Desktop]", () => {
               .eq(i)
               .click();
 
-            // verify that only selected color is selected
+            // only selected color should be selected
             for (let j = 0; j < $children.length; j++) {
               getTestElement("ColorPicker__container")
                 .children("ul")
@@ -88,19 +88,20 @@ describe("pages [Desktop]", () => {
         .then(($children) => {
           // click each accessory
           for (let i = 0; i < $children.length; i++) {
+            // should not be checked before clicking
             getNthTestChild(i, "AccessoriesPicker__container")
               .invoke("attr", "data-checked")
               .should("equal", "false");
 
-            getNthTestChild(i, "AccessoriesPicker__container").click();
-
+            // should be cheked after first click
             getNthTestChild(i, "AccessoriesPicker__container")
+              .click()
               .invoke("attr", "data-checked")
               .should("equal", "true");
 
-            getNthTestChild(i, "AccessoriesPicker__container").click();
-
+            // should not be checked after second click
             getNthTestChild(i, "AccessoriesPicker__container")
+              .click()
               .invoke("attr", "data-checked")
               .should("equal", "false");
           }

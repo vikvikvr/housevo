@@ -4,6 +4,8 @@ function getTestElement(selector) {
   return cy.get(`[data-testid="${selector}"]`);
 }
 
+export {};
+
 const buttonTexts = [/models/i, /colors/i, /accessories/i, /summary/i];
 
 const pageNames = [
@@ -44,7 +46,6 @@ describe("navigation [Desktop]", () => {
         .forEach((text) => {
           getTestElement("WizardFooter__container").contains(text);
           getTestElement("WizardFooter__backButton__small").click();
-          getTestElement("WizardFooter__container").not().contains(text);
         });
     });
   });
