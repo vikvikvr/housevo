@@ -17,21 +17,21 @@
   border: 2px solid $lightGray;
   max-width: 420px;
   transition: all 0.3s ease-out;
+}
 
-  .modelName {
-    font-size: 2rem;
-  }
+.modelName {
+  font-size: 2rem;
+}
+
+.iconContainer {
+  display: none;
+}
+
+.modelContainer[data-checked="true"] {
+  border: 2px solid $primary;
 
   .iconContainer {
-    display: none;
-  }
-
-  &[data-checked="true"] {
-    border: 2px solid $primary;
-
-    .iconContainer {
-      display: block;
-    }
+    display: block;
   }
 }
 

@@ -33,7 +33,7 @@ function WizardFooter({
           <h2>${numberWithPeriods(totalPrice)}</h2>
         </div>
       </div>
-      <nav>
+      <nav className={styles.footerNav}>
         {/* TODO: remove unused button styles */}
         {/* TODO: disable button when no color selected yet */}
         {step > 0 && (
@@ -49,19 +49,21 @@ function WizardFooter({
             />
           </div>
         )}
-        <div
-          className={styles.backButton}
-          onClick={onBack}
-          data-testid="WizardFooter__backButton__small"
-        >
-          <span className={styles.iconContainer}>
-            <Image
-              src={arrowDarkIcon}
-              alt="arrow back"
-              className={styles.icon}
-            />
-          </span>
-        </div>
+        {step > 0 && (
+          <div
+            className={styles.backButtonSmall}
+            onClick={onBack}
+            data-testid="WizardFooter__backButton__small"
+          >
+            <span className={styles.iconContainer}>
+              <Image
+                src={arrowDarkIcon}
+                alt="arrow back"
+                className={styles.icon}
+              />
+            </span>
+          </div>
+        )}
         <ScrollUpButton
           variant="primary"
           textOptions={buttonTexts}

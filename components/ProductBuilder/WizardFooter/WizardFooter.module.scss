@@ -11,29 +11,27 @@
   box-shadow: 0px -2px 25px 6px #b1b1b18a;
   background-color: white;
 
-  .backButtonBig {
-    @include fill;
-  }
-
-  nav {
-    @include row;
-    @include fill;
-    margin-left: auto;
-  }
-
   button {
     @include fill;
+    @include center;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 0.8rem;
   }
 }
 
-.backButton {
+.backButtonBig {
+  @include fill;
+}
+
+.footerNav {
+  @include row;
+  @include fill;
+  margin-left: auto;
+}
+
+.backButtonSmall {
   display: none;
 }
 
@@ -46,15 +44,6 @@
     height: 100px;
     padding: 0 2rem;
 
-    nav {
-      width: auto;
-      height: auto;
-    }
-
-    .backButtonBig {
-      display: none;
-    }
-
     button {
       @include rounded-full;
       height: 3.5rem;
@@ -66,25 +55,34 @@
         left: 2rem;
       }
     }
+  }
 
-    .backButton {
-      @include circle(3.5rem);
-      background-color: $lightGray;
-      margin-right: 1rem;
-      position: relative;
-      cursor: pointer;
-      display: block;
+  .footerNav {
+    width: auto;
+    height: auto;
+  }
 
-      .iconContainer {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(180deg);
-      }
+  .backButtonBig {
+    display: none;
+  }
 
-      .buttonText {
-        display: none;
-      }
+  .backButtonSmall {
+    @include circle(3.5rem);
+    background-color: $lightGray;
+    margin-right: 1rem;
+    position: relative;
+    cursor: pointer;
+    display: block;
+
+    .iconContainer {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    }
+
+    .buttonText {
+      display: none;
     }
   }
 

@@ -12,7 +12,7 @@ interface Props {
 function Summary({ car }: Props): JSX.Element {
   return (
     <ul className={styles.container} data-testid="Summary__container">
-      <li>
+      <li className={styles.section}>
         <h2 className={styles.sectionTitle}>model</h2>
         <img
           className={styles.carPicture}
@@ -22,7 +22,7 @@ function Summary({ car }: Props): JSX.Element {
         <h1 className={styles.modelName}>{car.model.name}</h1>
         <p className={styles.modelDescription}>{car.model.description}</p>
       </li>
-      <li>
+      <li className={styles.section}>
         <h2 className={styles.sectionTitle}>color</h2>
         <div className={styles.colorRow}>
           <ColorBubble hexCode={car.color.hexCode} />
@@ -31,7 +31,7 @@ function Summary({ car }: Props): JSX.Element {
           </span>
         </div>
       </li>
-      <li>
+      <li className={styles.section}>
         <h2 className={styles.sectionTitle}>accessories</h2>
         <ul className={styles.accessories}>
           {car.accessories.map((accessory) => (

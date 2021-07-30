@@ -43,21 +43,21 @@
     background-color: $textLight;
     color: white;
   }
+}
 
-  .iconContainerLight {
-    transform: rotate(180deg) translateY(50%);
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-  }
+.iconContainerLight {
+  transform: rotate(180deg) translateY(50%);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+}
 
-  .iconContainerDark {
-    display: none;
-    transform: rotate(180deg) translateY(50%);
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-  }
+.iconContainerDark {
+  display: none;
+  transform: rotate(180deg) translateY(50%);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
 }
 
 .stepCounter {
@@ -94,15 +94,13 @@
     position: absolute;
     left: 1rem;
 
-    &:hover {
-      .iconContainerDark {
-        display: none;
-      }
+    &:hover .iconContainerDark {
+      display: none;
     }
+  }
 
-    .iconContainerDark {
-      display: block;
-    }
+  .iconContainerDark {
+    display: block;
   }
 
   .stepCounter {

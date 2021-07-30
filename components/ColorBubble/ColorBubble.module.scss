@@ -42,5 +42,4 @@
 .coloredCircle {
   @include circle(2.6rem);
   @include center-absolute;
-  background-color: green;
 }

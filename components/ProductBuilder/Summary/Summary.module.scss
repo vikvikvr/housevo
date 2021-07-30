@@ -6,16 +6,17 @@
   align-items: stretch;
   max-width: 1000px;
   padding-bottom: 4rem;
+}
 
-  & > li {
-    margin-bottom: 2rem;
-  }
+.section {
+  margin-bottom: 2rem;
 }
 
 .sectionTitle {
   text-transform: uppercase;
   margin-bottom: 2rem;
 
+  // small horizontal gray line
   &::before {
     content: "";
     display: block;
@@ -56,10 +57,10 @@
     margin-top: 12rem;
     margin-bottom: 4rem;
     gap: 2rem;
+  }
 
-    & > li {
-      @include column;
-    }
+  .section {
+    @include column;
   }
 
   .modelName {

@@ -17,35 +17,9 @@
   gap: 0.5rem;
 }
 
-// TODO: fix using concentric circles
-.colorCircle {
-  @include circle(2rem);
-  border: 2px solid $lightGray;
-  position: relative;
-  cursor: pointer;
-
-  .innerCircle {
-    @include circle(1.8rem);
-    border: 2px solid white;
-    position: absolute;
-  }
-
-  &[data-selected="true"] {
-    border: 2px solid $primary;
-  }
-}
-
 @include desktop {
   .container {
     padding: 0 10rem;
     margin-top: 8rem;
-  }
-
-  .colorCircle {
-    @include circle(50px);
-
-    .innerCircle {
-      @include circle(48px);
-    }
   }
 }
