@@ -26,7 +26,6 @@ function ModelPicker({
           data-checked={selectedModel.name === model.name}
         >
           <h1 className={styles.modelName}>{model.name}</h1>
-          {/* TODO: figure out out to replace with <Image /> */}
           <img
             className={styles.modelImage}
             src={model.imageUrl}

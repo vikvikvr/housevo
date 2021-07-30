@@ -33,7 +33,6 @@ function ProductBuilder() {
       <div className={styles.pageContent}>
         <CSSTransition in={wizardStep === 0} {...transitionProps}>
           <ModelPicker
-            key="model-picker"
             availableModels={carsOptions.map((option) => option.model)}
             selectedModel={desiredCar.model}
             onSelectModel={(model) => setForm((form) => ({ ...form, model }))}
@@ -41,7 +40,6 @@ function ProductBuilder() {
         </CSSTransition>
         <CSSTransition in={wizardStep === 1} {...transitionProps}>
           <ColorPicker
-            key="color-picker"
             colors={carsOptions[form.model].colors}
             selectedColorIndex={form.color}
             onSelectColor={(color) => setForm((form) => ({ ...form, color }))}
@@ -49,7 +47,6 @@ function ProductBuilder() {
         </CSSTransition>
         <CSSTransition in={wizardStep === 2} {...transitionProps}>
           <AccessoriesPicker
-            key="accessories-picker"
             accessories={carsOptions[form.model].accessories}
             selectedAccessories={form.accessories}
             toggleAccessory={toggleAccessory}

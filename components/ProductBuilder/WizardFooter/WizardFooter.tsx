@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./WizardFooter.module.scss";
-import { arrowDarkIcon, arrowLightIcon } from "assets/images/";
+import { arrowDarkIcon } from "assets/images/";
 import Image from "next/image";
 import ScrollUpButton from "components/ScrollUpButton";
 import { numberWithPeriods } from "helpers";
+import { pageNames } from "data";
 
 interface Props {
   imageUrl: string;
@@ -13,6 +14,8 @@ interface Props {
   onNext(): void;
 }
 
+const buttonTexts = [...pageNames, "buy now"];
+
 function WizardFooter({
   imageUrl,
   totalPrice,
@@ -20,11 +23,9 @@ function WizardFooter({
   onBack,
   onNext,
 }: Props): JSX.Element {
-  const buttonTexts = ["models", "colors", "accessories", "summary", "buy now"];
   return (
     <footer className={styles.container} data-testid="WizardFooter__container">
       <div className={styles.carInfo}>
-        {/* TODO: replace with <Image /> */}
         <img src={imageUrl} alt="car image" />
         <div className={styles.totalPrice}>
           <span>Total</span>

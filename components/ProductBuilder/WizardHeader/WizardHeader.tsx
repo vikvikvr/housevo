@@ -1,6 +1,7 @@
 import styles from "./WizardHeader.module.scss";
 import { arrowLightIcon, arrowDarkIcon } from "assets/images";
 import Image from "next/image";
+import { pageNames } from "data";
 
 interface Props {
   step: number;
@@ -16,21 +17,18 @@ function WizardHeader({ step, selectStep }: Props): JSX.Element {
       <h1 className={styles.titleDesktop}>product builder</h1>
       <span className={styles.stepCounter}>Step {step + 1} of 4</span>
       <ul className={styles.links} data-testid="WizardHeader__links__container">
-        <li data-selected={step === 0} onClick={() => selectStep(0)}>
-          models
-        </li>
-        <li data-selected={step === 1} onClick={() => selectStep(1)}>
-          colors
-        </li>
-        <li data-selected={step === 2} onClick={() => selectStep(2)}>
-          accessories
-        </li>
-        <li data-selected={step === 3} onClick={() => selectStep(3)}>
-          summary
-        </li>
+        {pageNames.map((pageName, index) => (
+          <li
+            key={pageName}
+            onClick={() => selectStep(index)}
+            data-selected={step === index}
+          >
+            {pageName}
+          </li>
+        ))}
       </ul>
+      {/* TODO: extract button to component */}
       <button className={styles.backButton} data-step={step}>
-        {/* TODO: show icon for desktop */}
         <span className={styles.iconContainerLight}>
           <Image src={arrowLightIcon} alt="arrow icon" />
         </span>

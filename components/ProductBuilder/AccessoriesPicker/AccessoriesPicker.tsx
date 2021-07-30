@@ -30,7 +30,6 @@ function AccessoriesPicker({
             <span className={styles.price}>
               ${numberWithPeriods(accessory.price)}
             </span>
-            {/* TODO: extract checkbox to seaprate component */}
             <div className={styles.checkbox} data-checked={isChecked}>
               <span className={styles.checkIcon}>
                 <Image src={checkIcon} alt="check icon" />
