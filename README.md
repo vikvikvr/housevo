@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Powered%20by-Next.js-23272C.svg?logo=next.js"/>
   <img src="https://img.shields.io/badge/Style-SCSS-CF649A.svg?logo=sass"/>
   <img src="https://img.shields.io/badge/Tests-Cypress-23272C.svg?logo=cypress"/>
-  <a href="https://flighttypro.netlify.app/">
+  <a href="https://housevo.vercel.app/">
     <img src="https://img.shields.io/badge/Deployed%20on-Vercel-black.svg?logo=vercel">
   </a>
 </p>
@@ -18,7 +18,7 @@ On a spending spree? [Explore now!](https://housevo.vercel.app/) 👈
   <img width="100%" src="./docs/mockups.png" alt="mockups">
 </a>
 
-> 🌐 [Website](https://flighttypro.netlify.app/)
+> 🌐 [Website](https://housevo.vercel.app/)
 
 Based on [this project](https://codyhouse.co/demo/product-builder/index.html), it's an exercise done during the selection process for [Casavo](https://casavo.com/).
 
