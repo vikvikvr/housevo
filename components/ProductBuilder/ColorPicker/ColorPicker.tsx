@@ -5,9 +5,9 @@ import { CarColor } from "types";
 import styles from "./ColorPicker.module.scss";
 
 interface Props {
-  selectedColorIndex: number;
   colors: CarColor[];
-  onSelectColor(colorIndex: number);
+  selectedColorIndex: number;
+  onSelectColor(colorIndex: number): void;
 }
 
 function ColorPicker({

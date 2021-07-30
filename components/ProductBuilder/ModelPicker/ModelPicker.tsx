@@ -6,9 +6,9 @@ import { checkIcon } from "assets/images";
 import { numberWithPeriods } from "helpers";
 
 interface Props {
-  selectedModel: CarModel;
   availableModels: CarModel[];
-  onSelectModel(modelIndex: number);
+  selectedModel: CarModel;
+  onSelectModel(modelIndex: number): void;
 }
 
 function ModelPicker({

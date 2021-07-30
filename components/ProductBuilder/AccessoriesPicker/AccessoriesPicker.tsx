@@ -5,9 +5,9 @@ import Image from "next/image";
 import { numberWithPeriods } from "helpers";
 
 interface Props {
-  selectedAccessories: number[];
   accessories: CarAccessory[];
-  toggleAccessory(index: number);
+  selectedAccessories: number[];
+  toggleAccessory(index: number): void;
 }
 
 function AccessoriesPicker({

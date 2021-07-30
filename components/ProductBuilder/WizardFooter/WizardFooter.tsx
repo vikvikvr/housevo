@@ -8,8 +8,8 @@ import { pageNames } from "data";
 
 interface Props {
   imageUrl: string;
-  totalPrice: number;
   step: number;
+  totalPrice: number;
   onBack(): void;
   onNext(): void;
 }

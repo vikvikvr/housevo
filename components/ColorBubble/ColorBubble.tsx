@@ -2,9 +2,9 @@ import styles from "./ColorBubble.module.scss";
 
 interface Props {
   hexCode: string;
+  isSelected?: boolean;
   tooltipText?: string;
   onClick?(): void;
-  isSelected?: boolean;
 }
 
 function ColorBubble({

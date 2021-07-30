@@ -3,10 +3,10 @@ import Image from "next/image";
 import { arrowLightIcon, arrowDarkIcon } from "assets/images";
 
 interface Props {
-  textOptions: string[];
   currentIndex: number;
+  textOptions: string[];
   variant: "primary" | "secondary";
-  onClick();
+  onClick(): void;
 }
 
 function ScrollUpButton({
