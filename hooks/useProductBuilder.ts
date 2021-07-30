@@ -1,15 +1,21 @@
 import { useState } from "react";
 import { Car, CarOptions } from "types";
 
+interface Form {
+  model: number;
+  color: number;
+  accessories: number[];
+}
+
 function useProductBuilder(carsOptions: CarOptions[]) {
   const [wizardStep, setWizardStep] = useState(0);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<Form>({
     model: 0,
     color: 0,
     accessories: [],
   });
 
-  function toggleAccessory(index: number) {
+  function toggleAccessory(index: number): void {
     setForm((currentForm) => {
       let accessories = [...form.accessories, index];
 
@@ -24,7 +30,7 @@ function useProductBuilder(carsOptions: CarOptions[]) {
     });
   }
 
-  function handleNextStep() {
+  function handleNextStep(): void {
     if (wizardStep === 3) {
       alert("BUY!");
     } else {

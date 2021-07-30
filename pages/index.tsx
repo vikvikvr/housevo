@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ProductBuilder } from "components";
 import styles from "../styles/Home.module.scss";
 
-export default function Home() {
+function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,3 +17,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

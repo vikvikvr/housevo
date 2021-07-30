@@ -10,7 +10,7 @@ import { CSSTransition } from "react-transition-group";
 import useProductBuilder from "hooks/useProductBuilder";
 import { carTotalPrice } from "helpers";
 
-function ProductBuilder() {
+function ProductBuilder(): JSX.Element {
   const {
     form,
     setForm,
